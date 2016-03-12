@@ -1,0 +1,22 @@
+<!doctype html>
+<html ng-app="app8" ng-cloak>
+	<head>
+		<title>Angular JS tutorial</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+		<script src="js/exam8.js"></script>
+		<style type="text/css">
+		</style>
+	</head>
+	<body>
+		<div ng-controller="mainCtrl">
+			<label> Make Uppercase: </label>
+			<input type="text" ng-model="name" />
+			<p>Upper Case: {{name | uppercase}}</p>
+			<p>Lower Case: {{name | lowercase}}</p>
+
+			<label> Currency Filter: </label>
+			<input type="text" ng-model="money" />
+			<p>Currency : {{money | currency}}</p>
+		</div>
+	</body>
+</html>
