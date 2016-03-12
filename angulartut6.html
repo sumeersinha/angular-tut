@@ -1,0 +1,35 @@
+<!doctype html>
+<html ng-app="app6" ng-cloak>
+	<head>
+		<title>Angular JS tutorial</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+		<script src="js/exam6.js"></script>
+		<style type="text/css">
+		</style>
+	</head>
+	<body>
+		<div ng-controller="heroCtrl">
+			<label>Hero to search for : </label>
+			<input type="text" ng-model="heroName"></input>
+			<br><br>
+			<button ng-click="getHeroData()">Submit</button>
+			<br><br>
+			{{heroData}}<br><br>
+		</div>
+
+		<!-- Adding Heros' :) -->
+		<div ng-controller="heroCtrl">
+			<form name="heroForm" ng-submit="addHeroData(realName, heroName)">
+				<label>Hero Name : </label>
+				<input type="text" name="heroName" ng-model="heroName" ng-required="true"></input>
+				<span class="error-message" ng-show="heroForm.heroName.$dirty && heroForm.heroName.$error.required">Must enter a hero name!</span>
+				<br><br>
+				<label>Real Name : </label>
+				<input name="realName" type="text" ng-model="realName" ng-required="true"></input>
+				<span class="error-message" ng-show="heroForm.realName.$dirty && heroForm.realName.$error.required">Must enter a real name!</span>
+				<br><br>
+				<input ng-disabled="heroForm.$invalid" type="submit" value="Submit"></input>
+			</form>
+		</div>
+	</body>
+</html>
